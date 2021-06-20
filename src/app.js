@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './header';
-import IsLoadingAndError from './IsLoadingAndError';
+// import IsLoadingAndError from './IsLoadingAndError';
 import Footer from './footer';
 import Login from './Login';
 import MyFavoriteBooks from './myFavoriteBooks'
@@ -20,7 +20,7 @@ class App extends React.Component {
     return(
       <>
         <Router>
-          <IsLoadingAndError>
+          {/* <IsLoadingAndError> */}
             <Header />
               <Switch>
                 <Route exact path="/">
@@ -34,7 +34,7 @@ class App extends React.Component {
 
               </Switch>
             <Footer />
-          </IsLoadingAndError>
+          {/* </IsLoadingAndError> */}
         </Router>
       </>
     )
