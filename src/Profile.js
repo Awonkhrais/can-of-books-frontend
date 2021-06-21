@@ -4,6 +4,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 class Profile extends Component {
   render() {
     const { user, isAuthenticated } = this.props.auth0;
+    console.log(this.props.auth0)
     return (
 
       <div>
