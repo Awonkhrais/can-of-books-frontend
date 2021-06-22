@@ -17,23 +17,28 @@ class App extends React.Component {
 
   render() {
     console.log('app', this.props)
-    return(
+    return (
       <>
         <Router>
           {/* <IsLoadingAndError> */}
-            <Header />
-              <Switch>
-                <Route exact path="/">
-                  {/* TODO: if the user is logged in, render the `MyFavoriteBooks` component, if they are not, render the `Login` component */}
-                  {this.props.auth0.isAuthenticated ? <MyFavoriteBooks /> : <Login />}
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              {/* TODO: if the user is logged in, render the `MyFavoriteBooks` component, if they are not, render the `Login` component */}
+              {this.props.auth0.isAuthenticated ? <MyFavoriteBooks /> : <Login />}
 
-                </Route>
-                {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
-                {this.props.auth0.isAuthenticated && <Profile />}
+            </Route>
+            {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
+            
+            {/* or other way */}
+            {/* <Route exact path="/profile" component={Profile} /> */}
 
 
-              </Switch>
-            <Footer />
+          </Switch>
+          <Footer />
           {/* </IsLoadingAndError> */}
         </Router>
       </>
