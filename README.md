@@ -1,12 +1,12 @@
 My partner was : Feras-Ezz-Aldien
 
-Name of feature:lab13
+Name of feature:lab14
 
-Estimate of time needed to complete: 3hours
+Estimate of time needed to complete: 1hours
 
-Start time: 2pm
-Finish time: 7pm
-Actual time needed to complete: 5hours
+Start time: 1pm
+Finish time: 3pm
+Actual time needed to complete: 2hours
 
 
 # Getting Started with Create React App
