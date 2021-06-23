@@ -34,7 +34,7 @@ class BestBooks extends React.Component {
         try {
             const email = this.props.auth0.user.email;
 
-            const server = process.env.Mongo_URL || 'http://localhost:3030';
+            const server = process.env.REACT_APP_SERVER_URL || 'http://localhost:3030';
             const bookrequest = await axios.get(`${server}/books?email=${email}`);
             this.setState({
                 books: bookrequest.data,
@@ -58,7 +58,7 @@ class BestBooks extends React.Component {
         };
         console.log(bookData);
         console.log(bookData.email);
-        const server = process.env.Mongo_URL || 'http://localhost:3030';
+        const server = process.env.REACT_APP_SERVER_URL || 'http://localhost:3030';
         const newBook = await axios.post(`${server}/addBooks`, bookData);
         
 
@@ -77,7 +77,7 @@ class BestBooks extends React.Component {
         const userEmail = {
             email: this.props.auth0.user.email
         }
-        const server = process.env.Mongo_URL || 'http://localhost:3030';
+        const server = process.env.REACT_APP_SERVER_URL || 'http://localhost:3030';
         const newBook = await axios.delete(`${server}/deleteBook/${index}`, { params: userEmail });
 
         this.setState({
@@ -100,7 +100,7 @@ class BestBooks extends React.Component {
 
         };
 
-        const server = process.env.Mongo_URL || 'http://localhost:3030';
+        const server = process.env.REACT_APP_SERVER_URL;
         const newBook = await axios.put(`${server}/updateBook/${this.state.index}`, bookData);
         this.setState({
             books:newBook.data,
